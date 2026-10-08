@@ -1,0 +1,108 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --text: #e4e6ea;
+  --muted: #8a8f9a;
+  --accent: #5b8cff;
+  --danger: #e2574c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, system-ui, "Segoe UI", sans-serif;
+}
+
+header {
+  padding: 1rem 1.5rem 0.25rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0.1rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+#open-bar, #toolbar, #export-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--panel);
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #2a2f3a;
+  background: #0f1115;
+  color: var(--text);
+}
+
+button {
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+button:disabled {
+  background: #3a3f4a;
+  cursor: not-allowed;
+}
+
+#delete-selection-btn { background: var(--danger); }
+
+main { padding: 0 1.5rem 2rem; }
+main.hidden { display: none; }
+
+#player {
+  width: 100%;
+  max-height: 40vh;
+  margin: 1rem 0;
+  background: black;
+  border-radius: 8px;
+}
+
+#transcript {
+  line-height: 2;
+  font-size: 1.05rem;
+  padding: 1rem;
+  background: var(--panel);
+  border-radius: 8px;
+  max-height: 40vh;
+  overflow-y: auto;
+  user-select: text;
+}
+
+.word {
+  cursor: pointer;
+  padding: 0.05rem 0.15rem;
+  border-radius: 4px;
+}
+
+.word:hover { background: #2a2f3a; }
+
+.word.deleted {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.word.selected { background: #3a4a7a; }
+
+.word.filler { border-bottom: 2px dotted var(--danger); }
+
+#status, #export-status { color: var(--muted); font-size: 0.85rem; }
+#duration-info { color: var(--muted); font-size: 0.85rem; margin-left: auto; }

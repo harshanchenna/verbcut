@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>verbcut</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>verbcut</h1>
+    <p class="tagline">edit the words, cut the footage</p>
+  </header>
+
+  <section id="open-bar">
+    <input id="path-input" type="text" placeholder="/path/to/video.mp4" />
+    <button id="open-btn">Open / Transcribe</button>
+    <span id="status"></span>
+  </section>
+
+  <main id="editor" class="hidden">
+    <video id="player" controls></video>
+
+    <div id="toolbar">
+      <button id="remove-fillers-btn">Remove fillers</button>
+      <button id="trim-silences-btn">Trim long silences</button>
+      <button id="delete-selection-btn" disabled>Delete selection</button>
+      <button id="undo-btn" disabled>Undo last delete</button>
+      <span id="duration-info"></span>
+    </div>
+
+    <div id="transcript" tabindex="0"></div>
+
+    <div id="export-bar">
+      <input id="output-input" type="text" placeholder="/path/to/output.mp4" />
+      <button id="export-btn">Export</button>
+      <span id="export-status"></span>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
